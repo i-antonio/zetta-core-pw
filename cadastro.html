@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Zetta Core - Cadastro</title>
     <link rel="stylesheet" href="assets/css/cadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="auth-container">
+        <header class="auth-header">
+            <h1 class="logo">Zetta Core</h1>
+        </header>
+
+        <main class="auth-card">
+            <div class="auth-content">
+                <h2>Crie sua conta</h2>
+                <p>Tecnologia de ponta a um clique de distância.</p>
+                
+                <form action="#">
+                    <div class="input-group">
+                        <label for="fullname">Nome Completo</label>
+                        <input type="text" id="fullname" placeholder="Como deseja ser chamado?" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email-reg">E-mail</label>
+                        <input type="email" id="email-reg" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="pass-reg">Senha</label>
+                        <input type="password" id="pass-reg" placeholder="Crie uma senha forte" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Criar Conta</button>
+                    
+                    <div class="auth-footer">
+                        <p>Já possui uma conta? <a href="login.html" class="link-bold">Faça login</a></p>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
