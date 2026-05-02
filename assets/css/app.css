@@ -1,3 +1,5 @@
+@import 'components/index.css';
+
 :root {
     --font-size: 16px;
     --background: #ffffff;
@@ -116,6 +118,9 @@ body {
     color: var(--foreground);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 img, picture, video, canvas, svg {
