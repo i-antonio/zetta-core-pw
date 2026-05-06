@@ -1,1 +1,1 @@
-import { Header } from "./components/header.js";
+import './components/index.js';

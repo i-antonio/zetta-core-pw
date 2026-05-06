@@ -4,7 +4,8 @@ export class Footer extends HTMLElement {
     }
 
     render() {
-        this.classList.add('app-footer');
+        this.id = 'app-footer';
+        this.innerHTML = `testesteste`;
     }
 }
 
