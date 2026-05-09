@@ -6,7 +6,7 @@ export class Header extends HTMLElement {
     render() {
         this.classList.add('app-header');
         this.innerHTML = `
-            <div class="header-container">
+            <div class="container">
                 <div class="header-content">
                     <nav class="header-nav">
                         <a href="/index.html">Zetta Core</a>
