@@ -1,5 +1,6 @@
 @import 'header.css';
 @import 'footer.css';
+@import 'productCard.css';
 
 .container {
     margin-inline: auto;

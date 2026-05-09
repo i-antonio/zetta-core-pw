@@ -1,0 +1,41 @@
+export class ProductCard extends HTMLElement {
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        const data = this.getAttribute('data') ? JSON.parse(this.getAttribute('data')) : {};
+        this.innerHTML = `
+            <a href="/product/1" class="product-card">
+                <article class="card-container">
+                    <div class="card-image-wrapper">
+                        <img 
+                            src="https://images.unsplash.com/photo-1606625000171-fa7d471da28c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" 
+                            alt="Notebook Gamer RTX 4060" 
+                            class="card-image"
+                        >
+                    </div>
+
+                    <div class="card-content">
+                        <span class="card-category">Notebooks</span>
+                        <h3 class="card-title">Notebook Gamer RTX 4060</h3>
+                        <p class="card-price">$5499.99</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <button class="btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                                <circle cx="8" cy="21" r="1"></circle>
+                                <circle cx="19" cy="21" r="1"></circle>
+                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                            </svg>
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </article>
+            </a>
+        `;
+    }
+}
+
+customElements.define('product-card', ProductCard)
