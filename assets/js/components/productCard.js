@@ -19,7 +19,7 @@ export class ProductCard extends HTMLElement {
                     <div class="card-content">
                         <span class="card-category">Notebooks</span>
                         <h3 class="card-title">Notebook Gamer RTX 4060</h3>
-                        <p class="card-price">R$5499.99</p>
+                        <p class="card-price">R$ 5.499,99</p>
                     </div>
 
                     <div class="card-footer">
