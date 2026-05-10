@@ -1,1 +1,36 @@
 @import 'app.css';
+
+.product-grid {
+    display: flex;
+    gap: 50px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-section img {
+    max-width: 100%;
+    border-radius: 15px; /* Igual ao arredondado do seu print */
+    background: #f4f4f4; /* Background padrão citado na conversa */
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.category-tag {
+    background: #000;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 5px;
+    width: fit-content;
+    font-size: 12px;
+}
+
+.price {
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin: 20px 0;
+}
