@@ -6,24 +6,21 @@ export class ProductCard extends HTMLElement {
     render() {
         const data = this.getAttribute('data') ? JSON.parse(this.getAttribute('data')) : {};
         this.innerHTML = `
-            <a href="/product/1" class="product-card">
+            <!--<a href="/produto?id=${data.id}" class="product-card"> -->
+            <a href="#" class="product-card">
                 <article class="card-container">
                     <div class="card-image-wrapper">
-                        <img 
-                            src="https://images.unsplash.com/photo-1606625000171-fa7d471da28c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" 
-                            alt="Notebook Gamer RTX 4060" 
-                            class="card-image"
-                        >
+                        <img src="${data.imagem_url}" alt="${data.nome}" class="card-image">
                     </div>
 
                     <div class="card-content">
-                        <span class="card-category">Notebooks</span>
-                        <h3 class="card-title">Notebook Gamer RTX 4060</h3>
-                        <p class="card-price">R$ 5.499,99</p>
+                        <span class="card-category">${data.categoria}</span>
+                        <h3 class="card-title">${data.nome}</h3>
+                        <p class="card-price">R$ ${data.preco.toFixed(2).replace('.', ',')}</p>
                     </div>
 
                     <div class="card-footer">
-                        <button class="btn-primary">
+                        <button class="btn-primary add-to-cart" data-product-id="${data.id}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
                                 <circle cx="8" cy="21" r="1"></circle>
                                 <circle cx="19" cy="21" r="1"></circle>
