@@ -10,36 +10,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <header class="header">
-        <div class="header-left">
-            <div class="logo">Zetta Core</div>
-            <nav class="nav">
-                <a href="#" class="active">Início</a>
-                <a href="#">Produtos</a>
-            </nav>
-        </div>
-        <div class="header-icons">
-            <button class="icon-btn">&#128269;</button> <button class="icon-btn">&#128100;</button> <button class="icon-btn">&#128722;</button> </div>
-    </header>
+    <app-header></app-header>
 
     <main class="product-page">
         <div class="back-container">
-            <a href="#" class="back-link">&larr; Back</a>
+            <a href="index.html" class="back-link">&larr; Voltar</a>
         </div>
 
         <div class="product-container">
             <section class="image-section">
-                <img src="img/notebook.png" alt="Notebook Gamer RTX 4060" id="product-img">
+                <img id="productImg">
             </section>
 
             <section class="details-section">
-                <span class="product-tag">Notebooks</span>
-                <h1 class="product-title">Notebook Gamer RTX 4060</h1>
-                <div class="product-price">$5499.99</div>
+                <span id="productTag" class="product-tag">Produto Não Disponível</span>
+                <h1 id="productTitle" class="product-title">Erro</h1>
+                <div id="productPrice" class="product-price">R$ 0,00</div>
                 
-                <p class="product-description">
-                    Notebook gamer de alta performance com processador Intel Core i7, 16GB RAM, RTX 4060 8GB, SSD 512GB. Perfeito para jogos e trabalho pesado.
+                <p id="productDescription" class="product-description">
+                    Desculpe, o produto que você está procurando não está disponível no momento. Por favor, volte para a página inicial e explore nossos outros produtos incríveis!    
                 </p>
                 
                 <ul class="product-benefits">
@@ -49,55 +38,37 @@
                 </ul>
 
                 <div class="product-actions">
-                    <button class="btn-cart">
+                    <button class="btn-cart add-to-cart" id="addToCartBtn" disabled>
                         <span>&#128722;</span> Adicionar ao Carrinho
                     </button>
-                    <button class="btn-buy">Comprar Agora</button>
-                    <button class="btn-wishlist">&#9825;</button>
                 </div>
             </section>
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-col brand-col">
-                <div class="logo-footer">Zetta Core</div>
-                <p class="brand-desc">Sua loja especializada em informática e tecnologia.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Loja</h4>
-                <ul>
-                    <li><a href="#">Todos os Produtos</a></li>
-                    <li><a href="#">Categorias</a></li>
-                    <li><a href="#">Novidades</a></li>
-                    <li><a href="#">Promoções</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Suporte</h4>
-                <ul>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">Informações de Entrega</a></li>
-                    <li><a href="#">Trocas e Devoluções</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Empresa</h4>
-                <ul>
-                    <li><a href="#">Sobre Nós</a></li>
-                    <li><a href="#">Trabalhe Conosco</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                    <li><a href="#">Termos de Uso</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Zetta Core. Todos os direitos reservados.</p>
-            <div class="footer-help-btn">?</div>
-        </div>
-    </footer>
-
+    <app-footer></app-footer>
 </body>
+<script type="module" src="assets/js/app.js"></script>
+<script type="module">
+    import { getProductById } from './assets/js/produtos.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+        const product = getProductById(productId);
+
+        if (product) {
+            document.getElementById('productImg').src = product.imagem_url;
+            document.getElementById('productImg').alt = product.nome;
+            document.getElementById('productTitle').textContent = product.nome;
+            document.getElementById('productPrice').textContent = `R$ ${product.preco.toFixed(2).replace('.', ',')}`;
+            document.getElementById('productDescription').textContent = product.descricao;
+            document.getElementById('productTag').textContent = product.categoria;
+
+            const addToCartBtn = document.getElementById('addToCartBtn');
+            addToCartBtn.disabled = false;
+            addToCartBtn.setAttribute('data-product-id', product.id);
+        }
+    });
+</script>
 </html>

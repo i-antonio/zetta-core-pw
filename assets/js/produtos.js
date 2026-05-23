@@ -12,4 +12,8 @@ export function listProducts() {
   });
 }
 
+export function getProductById(id) {
+  return products.find(product => product.id === id);
+}
+
 document.addEventListener('DOMContentLoaded', listProducts);
