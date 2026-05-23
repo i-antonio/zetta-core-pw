@@ -2,6 +2,7 @@ export const products = [{"id":1,"nome":"Notebook Gamer RTX 4060","preco":5499.9
 
 export function listProducts() {
   const productsList = document.getElementById('productsList');
+  if (!productsList) return;
   productsList.innerHTML = '';
 
   products.forEach(product => {

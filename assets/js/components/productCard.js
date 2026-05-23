@@ -6,8 +6,7 @@ export class ProductCard extends HTMLElement {
     render() {
         const data = this.getAttribute('data') ? JSON.parse(this.getAttribute('data')) : {};
         this.innerHTML = `
-            <!--<a href="/produto?id=${data.id}" class="product-card"> -->
-            <a href="#" class="product-card">
+            <a href="/produto?id=${data.id}" class="product-card">
                 <article class="card-container">
                     <div class="card-image-wrapper">
                         <img src="${data.imagem_url}" alt="${data.nome}" class="card-image">
