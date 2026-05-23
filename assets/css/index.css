@@ -1,1 +1,56 @@
 @import 'app.css';
+
+main {
+    flex: 1;
+}
+
+.index-container {
+    min-height: 100vh;
+}
+
+.initial-message {
+    padding-block: calc(var(--spacing) * 20);
+    background-image: linear-gradient(to bottom in oklab, var(--color-gray-50), var(--color-white));
+}
+.initial-message .container {
+    margin-inline: auto;
+    padding: calc(var(--spacing) * 4);
+    text-align: center;
+}
+.initial-message h1 {
+    font-size: var(--text-6xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: calc(var(--spacing) * 6);
+}
+.initial-message p {
+    font-size: var(--text-xl);
+    color: var(--color-gray-600);
+    margin-bottom: calc(var(--spacing) * 8);
+    max-width: var(--container-2xl);
+    margin-inline: auto;
+}
+
+.products-container {
+    padding-block: calc(var(--spacing) * 16);
+    padding-inline: calc(var(--spacing) * 4);
+    margin-inline: auto;
+}
+.products-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: calc(var(--spacing) * 8);
+}
+.products-header h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-semibold);
+}
+.products-header p {
+    color: var(--color-gray-600);
+    margin-top: calc(var(--spacing) * 2);
+}
+
+.products-list {
+    display: grid;
+    gap: calc(var(--spacing) * 6);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}

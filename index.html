@@ -7,6 +7,29 @@
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
-    
+    <app-header></app-header>
+    <main>
+        <div class="index-container">
+            <section class="initial-message">
+                <div class="container">
+                    <h1>Tecnologia de Ponta</h1>
+                    <p>Os melhores produtos de informática e hardware com os preços mais competitivos do mercado. Qualidade e performance garantidas.</p>
+                </div>
+            </section>
+
+            <section class="container products-container">
+                <div class="products-header">
+                    <div>
+                        <h2>Produtos em Destaque</h2>
+                        <p>Os melhores produtos selecionados para você</p>
+                    </div>
+                </div>
+                <div class="products-list" id="productsList"></div>
+            </section>
+        </div>
+    </main>
+    <app-footer></app-footer>
+    <script type="module" src="assets/js/app.js"></script>
+    <script type="module" src="assets/js/produtos.js"></script>
 </body>
 </html>
