@@ -37,7 +37,7 @@ if (form) {
 
     usuarios.push(usuario);
     localStorage.setItem('usuariosRegistrados', JSON.stringify(usuarios));
-    alert('Registro salvo com sucesso no LocalStorage!');
+    alert('Registro salvo com sucesso!');
     form.reset();
     window.location.href = 'login.html';
   });

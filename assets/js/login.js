@@ -110,6 +110,7 @@ function connectLoginForm() {
       if (result.success) {
         form.reset();
         renderLoginState({ profileSelector: '#userNameDisplay', messageSelector: '#loginMessage', logoutSelector: '#logoutButton' });
+        window.location.href = 'index.html';
       }
     });
   }
