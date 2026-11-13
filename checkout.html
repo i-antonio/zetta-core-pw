@@ -41,12 +41,36 @@
 
         <div class="row-2">
           <div class="field">
+<<<<<<< Updated upstream
             <label>Cidade</label>
             <input type="text" />
           </div>
           <div class="field">
             <label>CEP</label>
             <input type="text" />
+=======
+            <label for="numero_cartao">Número do Cartão</label>
+            <input type="text" minlength="16" maxlength="16" id="numero_cartao" name="numero_cartao" placeholder="1234 5678 9012 3456" required  oninput="mascaras.numeros(event)" >
+          </div>
+  
+          <div class="row-2" style="margin-bottom:16px;">
+            <div class="field">
+              <label for="validade_cartao">Validade</label>
+              <input type="text" id="validade_cartao" name="validade_cartao" placeholder="MM/AA" required  oninput="mascaras.diaMes(event)">
+            </div>
+            <div class="field">
+              <label for="cvv_cartao">CVV</label>
+              <input type="text" id="cvv_cartao" name="cvv_cartao" placeholder="123" required oninput="mascaras.numeros(event)" maxlength="3">
+            </div>
+          </div>
+  
+          <div class="security-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            Suas informações de pagamento estão seguras e criptografadas
+>>>>>>> Stashed changes
           </div>
         </div>
       </div>
