@@ -48,7 +48,7 @@
             </div>
             <div class="field">
               <label for="cep">CEP</label>
-              <input type="text" minlength="9" maxlength="9" id="cep" 
+              <input type="text" minlength="8" maxlength="8" id="cep" 
                 name="cep" required  oninput="mascaras.cep(event)">
             </div>
           </div>
@@ -65,7 +65,7 @@
   
           <div class="field">
             <label for="numero_cartao">Número do Cartão</label>
-            <input type="text" id="numero_cartao" name="numero_cartao" placeholder="1234 5678 9012 3456" required  oninput="mascaras.numeros(event)" >
+            <input type="text" maxlength="16" id="numero_cartao" name="numero_cartao" placeholder="1234 5678 9012 3456" required  oninput="mascaras.numeros(event)" >
           </div>
   
           <div class="row-2" style="margin-bottom:16px;">
@@ -75,7 +75,7 @@
             </div>
             <div class="field">
               <label for="cvv_cartao">CVV</label>
-              <input type="text" id="cvv_cartao" name="cvv_cartao" placeholder="123" required oninput="mascaras.numeros(event)" maxlength="4">
+              <input type="text" id="cvv_cartao" name="cvv_cartao" placeholder="123" required oninput="mascaras.numeros(event)" maxlength="3">
             </div>
           </div>
   
